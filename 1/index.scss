@@ -1,0 +1,55 @@
+*{margin: 0;padding: 0}
+$border:1px solid green;$background:yellow;
+@mixin wh($width,$height){
+   width: $width;
+   height: $height;
+}
+#box{
+  @include wh(200px,200px);
+  overflow: hidden;
+  border: $border;
+  margin: 0 auto;
+  .uls{
+    @include wh(200px*5,200px);
+  }
+  .uls li{
+    @include wh(199px,200px);
+    border-right:$border;
+    float: left;
+    line-height: 200px;
+    text-align: center;
+    list-style: none;
+  }
+}
+.sub{
+  @include wh(200px,50px);
+  margin: 0 auto;
+  li{
+    @include wh(38px,50px);
+    float: left;
+    list-style: none;
+    text-align: center;
+    line-height: 50px;
+    border: $border;
+  }
+  .title{
+    background: $background;
+  }
+}
+.jian{
+  @include wh(300px,50px);
+  position: relative;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  .left{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .right{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
