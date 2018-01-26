@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>万花筒</title>
+    <style>
+        canvas{
+            background:#eee;
+        }
+    </style>
+
+</head>
+<body>
+<canvas width="600" height="600" id="canvas"></canvas>
+<script>
+//    window.onload = function(){
+//        var canvas = document.getElementById("canvas");
+//        var cobj = canvas.getContext("2d");
+//        var arr = [];
+//        var t=setInterval(function(){
+//            cobj.clearRect(0,0,600,600);
+//            for(var i=0;i<arr.length;i++){
+//                cobj.save();
+//                cobj.translate(300,300);
+//                cobj.scale(arr[i].scales,arr[i].scales);
+//                cobj.rotate(arr[i].angle*Math.PI/180);
+//                cobj.fillStyle = arr[i].color;
+//                cobj.fillRect(arr[i].num,arr[i].num,30,30);
+//                cobj.restore();
+//            }
+//        },50);
+//        setInterval(function(){
+//            for(var i=0;i<arr.length;i++){
+//                if(arr[i].num<=0){
+//                    arr.splice(i,1);
+//                    continue;
+//                }
+//                arr[i].angle+=2;
+//                arr[i].num-=0.2;
+//                arr[i].scales-=0.002;
+//                if(arr[i].scales<=0.2){
+//                    arr[i].scales=0.2;
+//                }
+//            }
+//        },50);
+//        setInterval(function(){
+//            var rect = {angle:0,num:150,scales:1,color:"rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")"};
+//            arr.push(rect);
+//        },600);
+//    }
+    var arr=[];
+    var ctx=canvas.getContext("2d");
+    function addInfo(){
+        var info={
+            pos:150,
+            scales:1,
+            angle:0,
+            color:"rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
+        };
+        arr.push(info);
+        console.log(arr);
+    }
+    setInterval(addInfo,1000);
+    function drawRect(){
+        ctx.clearRect(0,0,600,600);
+        for(var i=0;i<arr.length;i++){
+            ctx.save();
+            ctx.translate(300,300);
+            ctx.rotate(arr[i].angle*Math.PI/180);
+            ctx.scale(arr[i].scales,arr[i].scales);
+            ctx.fillStyle=arr[i].color;
+            ctx.fillRect(arr[i].pos,arr[i].pos,30,30);
+            ctx.restore();
+        }
+    }
+     setInterval(drawRect,60);
+    function change(){
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].pos<=0){
+                arr.splice(i,1);
+                continue;
+            }
+            if(arr[i].scales<0.2){
+                arr[i].scales=0.2;
+            }
+            arr[i].pos-=0.2;
+            arr[i].angle+=2;
+            arr[i].scales-=0.002;
+        }
+    }
+   setInterval(change,60);
+</script>
+</body>
+</html>
