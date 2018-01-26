@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="深山一枯柴">
+    <meta name="website" content="http://www.lihui-v.top
+
+">
+    <meta name="Description" content="马不停蹄的!">
+    <style type="text/css">
+        p{
+            width: 300px;
+            height: 150px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            position: relative;
+        }
+        p:after{
+            content: "";
+            /* width: 15px;
+             height: 15px;*/
+            border: 10px solid transparent;
+            border-top: 10px solid gray;
+            position: absolute;
+            right: 0;
+            bottom: -20px;
+        }
+    </style>
+</head>
+<body>
+<p id="content">总结：获取元素属性两种方式：
+    1,元素.style.属性名:获取的只能是行内样式，获取的属性值是带单位的字符串；
+    2，offsetWidth:行内页等都能获取，获取的值是不带单位的数值
+    offsetHeight = height + padding + border;</p>
+</body>
+<script>
+    var content = document.getElementById("content");
+    var strArry = content.innerText.split('');
+    content.innerText='';
+    var i=0;
+    var timer = setInterval(function () {
+        if (i<strArry.length){
+            content.innerText += strArry[i];
+            i++;
+        }else {
+            clearInterval(timer);
+        }
+    },100);
+</script>
+</html>
