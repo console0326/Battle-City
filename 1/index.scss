@@ -3,6 +3,8 @@ $border:1px solid green;$background:yellow;
 @mixin wh($width,$height){
    width: $width;
    height: $height;
+   height: $height;
+   height: $height;
 }
 #box{
   @include wh(200px,200px);
