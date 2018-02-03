@@ -1,0 +1,32 @@
+.box{width:100%;}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.canter{
+    width:7.5rem ;
+    height: 13.34rem;
+    background: url("../img/picd.png");
+    background-size: 100%;
+}
+.imgerBox{ width: 4.76rem;height: 0.52rem;margin: 1.5rem auto;}
+img{max-width:100%;vertical-align: middle;display:block;}
+.loveBox{width: 4.76rem;height: 4rem;margin: 0 auto;}
+.mieBox{width: 5.59rem;height: 1rem;margin: 1.3rem auto;}
