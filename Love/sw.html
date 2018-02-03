@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" minimal-ui />
+    <link rel="stylesheet" href="src/css/mobile.css">
+    <link rel="stylesheet" href="src/css/swiper.css">
+    <link rel="stylesheet" href="src/css/sw.css">
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide pink pinkTwo">
+            <div class="dx dxOne">
+                <h3 class="h3">暗恋她他，从Love开始</h3>
+                <div class="logo"><img src="./src/image/闪屏页-1_03.png" alt=""></div>
+                <div class="logoFont"><img src="./src/image/闪屏页-1_07.png" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-slide pink pinkThree">
+            <div class="dx">
+                <h3 class="h3 h3Two">暗恋她，暗恋他，美美哒...</h3>
+                <div class="logo"><img src="./src/image/1_03.png" alt=""></div>
+                <div class="logoFont"><img src="./src/image/1_07.png" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-slide pink pinkFoure">
+             <div class="dx">
+                 <h3 class="h3 h3Three">牵你的手，朝朝暮暮一辈子</h3>
+                 <div class="logo"><img src="./src/image/2_03.png" alt=""></div>
+                 <div class="logoFont"><img src="./src/image/2_07.png" alt=""></div>
+             </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</body>
+</html>
+<script src="src/js/app.js"></script>
+<script src="src/js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+    var h3=document.getElementsByClassName('h3')[0];
+    var strArry = h3.innerText.split('');
+    h3.innerText='';
+    var i=0;
+    var timer=setInterval(function (){
+        if (i<strArry.length){
+            h3.innerText += strArry[i];
+            i++;
+        }else {
+            clearInterval(timer);
+        }
+    },100);
+</script>

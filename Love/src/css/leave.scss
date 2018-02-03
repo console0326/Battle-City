@@ -1,0 +1,52 @@
+@mixin wh($width,$height){
+    width: $width;
+    height: $height;
+};
+.over{ box-sizing: border-box;}
+.after::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.fx{
+  float: left;
+}
+.fy{
+  float: right;
+}
+.box{
+  width: 7.5rem;
+  margin: 0 auto;
+  background: darkred;
+}
+.header{
+  @include wh(100%,.88rem);
+  background: #ff8288;
+  padding: .15rem .1rem;
+  span{
+    width: 33.3%;
+  }
+  .one{
+    display: block;
+    line-height: .65rem;
+    font-size: .3rem;
+    color: white;
+  }
+  .two{
+    display: block;
+    line-height: .65rem;
+    font-size: .34rem;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+  .three{
+    display: block;
+    line-height: .65rem;
+    font-size: .3rem;
+    color: white;
+    text-align: right;
+  }
+}
+
+

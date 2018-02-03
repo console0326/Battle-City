@@ -1,0 +1,46 @@
+.over {
+  box-sizing: border-box; }
+
+.after::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.fx {
+  float: left; }
+
+.fy {
+  float: right; }
+
+.box {
+  width: 7.5rem;
+  margin: 0 auto;
+  background: darkred; }
+
+.header {
+  width: 100%;
+  height: 0.88rem;
+  background: #ff8288;
+  padding: .15rem .1rem; }
+  .header span {
+    width: 33.3%; }
+  .header .one {
+    display: block;
+    line-height: .65rem;
+    font-size: .3rem;
+    color: white; }
+  .header .two {
+    display: block;
+    line-height: .65rem;
+    font-size: .34rem;
+    color: white;
+    font-weight: 600;
+    text-align: center; }
+  .header .three {
+    display: block;
+    line-height: .65rem;
+    font-size: .3rem;
+    color: white;
+    text-align: right; }
+
+/*# sourceMappingURL=leave.css.map */

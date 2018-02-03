@@ -1,0 +1,104 @@
+@mixin wh($width,$height){
+   width: $width;
+  height: $height;
+}
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.pink{
+  padding: .1rem;
+  box-sizing: border-box;
+}
+.pinkTwo{
+  background: #fdefe7;
+}
+.pinkThree{
+  background: #fffceb;
+}
+.pinkFoure{
+  background: rgb(255, 255, 255);
+}
+.swiper-pagination-bullet-active{
+  background: #ff8288;
+}
+.dx{
+  @include wh(100%,100%);
+  border: 2px dashed goldenrod;
+  border-radius: .2rem;
+}
+.h3{
+   color: #ac343e;
+   font-size: .34rem;
+   position: absolute;
+   top: 1.35rem;
+   left: 50%;
+   transform: translate(-50%,0);
+}
+.logo{
+  @include wh(4.66rem,3.94rem);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.logo img{
+  width: 100%;
+}
+.logoFont{
+  @include wh(5.39rem,.95rem);
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.logoFont img{
+  width: 100%;
+}
+.h3Two {
+  width: 100%;
+  color: #ce8b55;
+}
+.h3Three{
+  width: 100%;
+  color: #ff5c62;
+  font-weight: 700;
+}
+@media screen and(min-width: 768px){
+  .logoFont{
+    bottom: 1rem;
+  }
+  .swiper-pagination{
+     bottom:.35rem !important;
+  }
+}
+
