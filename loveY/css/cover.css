@@ -49,3 +49,6 @@ img{max-width:100%;vertical-align: middle;display:block;}
 .imgerBox2{ width: 5.25rem;height: 0.42rem;margin: 1.5rem auto;}
 .loveBox3{width:5.07rem;height: 4.99rem;margin: 0 auto;}
 .mieBox2{width: 6.49rem;height: 1.12rem;margin: 1.3rem auto;}
+.swiper-pagination-bullet-active{
+    background: rgb(255,130,135) !important;
+}

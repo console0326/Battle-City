@@ -36,10 +36,12 @@ body {
   box-sizing: border-box; }
 
 .pinkTwo {
-  background: #fdefe7; }
+  background: url("../image/picd.png");
+  background-size: cover; }
 
 .pinkThree {
-  background: #fffceb; }
+  background: url("../image/picd.png");
+  background-size: cover; }
 
 .pinkFoure {
   background: white; }
@@ -50,7 +52,12 @@ body {
 .dx {
   width: 100%;
   height: 100%;
-  border: 2px dashed goldenrod;
+  border-radius: .2rem; }
+
+.dX {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #e0e09b;
   border-radius: .2rem; }
 
 .h3 {
