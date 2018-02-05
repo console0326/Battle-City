@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/lMessage.css">
+</head>
+<body>
+<header class="header">
+    <div class="leftBox">
+        <img src="../img/imgs11.png" alt="">
+    </div>
+    <div class="reightBox" id="fSon">发送</div>
+</header>
+<section class="picDiv">
+    <textarea class="texts" id="texts"></textarea>
+    <div class="tuku" style="display: -webkit-box"></div>
+    <div class="adds">
+        <input type="file" class="file" id="fileInput" multiple accept="image/png, image/jpeg, image/gif, image/jpg">
+        <div class="addBox"><img src="../img/imgs12.png" alt=""></div>
+    </div>
+</section>
+<script src="../js/app.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script>
+    var userAgent = navigator.userAgent;
+    $(".file").change(function () {
+        var docObj =$(this)[0];
+        var picDiv=$(this).parents(".picDiv");
+        var fileList = docObj.files;
+        for (var i = 0; i < fileList.length; i++) {
+            var picHtml="<div class='imageDiv' > <img id='img" + fileList[i].name + "' /> <div class='cover'><i class='delbtn'>删除</i></div></div>"
+            $(".tuku").prepend(picHtml);
+            var imgObjPreview = document.getElementById("img"+fileList[i].name);
+            if (fileList && fileList[i]) {
+                imgObjPreview.style.display = 'block';
+                imgObjPreview.style.width = '1.5rem';
+                imgObjPreview.style.height = '1.5rem';
+                //imgObjPreview.src = docObj.files[0].getAsDataURL();
+                //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要以下方式
+                if(userAgent.indexOf('MSIE') == -1){//IE以外浏览器
+                    imgObjPreview.src = window.URL.createObjectURL(docObj.files[i]); //获取上传图片文件的物理路径
+                }else{//IE浏览器
+                    if(docObj.value.indexOf(",")!=-1){
+                        var srcArr=docObj.value.split(",");
+                        imgObjPreview.src = srcArr[i];
+                    }else{
+                        imgObjPreview.src = docObj.value;
+                    }
+                }
+            }
+        }
+        //删除功能
+        $(".delbtn").hover(function () {
+            var _this=$(this);
+            _this.parents(".imageDiv").remove();
+        });
+    });
+    $("#fSon").on("click",function(){
+        var tes=$("#texts").val();
+        $.ajax({
+            type:"post",
+            url:"../php/index.php?c=Message&a=sendMessage",
+            dataType:"json",
+            data:tes,
+            success:function(data){
+                console.log(data);
+            }
+        })
+    })
+</script>
+</body>
+</html>
