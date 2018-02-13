@@ -15,7 +15,7 @@
     <div class="reightBox" id="fSon">发送</div>
 </header>
 <section class="picDiv">
-    <textarea class="texts" name="message" id="texts"></textarea>
+    <form><textarea class="texts" name="message" id="texts"></textarea></form>
     <div class="tuku" style="display: -webkit-box"></div>
     <div class="adds">
         <input type="file" class="file" id="fileInput" multiple accept="image/png, image/jpeg, image/gif, image/jpg">
@@ -59,7 +59,7 @@
         });
     });
     $("#fSon").on("click",function(){
-        var tes=$("#texts").val();
+        var tes=$("form").serialize();
         $.ajax({
             type:"post",
             url:"../php/index.php?c=Message&a=sendMessage",
