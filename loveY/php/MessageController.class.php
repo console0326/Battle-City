@@ -4,7 +4,7 @@ class MessageController{
        if(IS_AJAX){
            $data=$_POST;
            $data["date"]=time();
-           $result=M()->add("messagess",$data);
+           $result=M()->add("message",$data);
            if(!$result){
                ajax_return("403","发送失败","");
            }else{

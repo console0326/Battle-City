@@ -1,54 +1,41 @@
-.box{width:100%;}
+.box {
+  width: 100%;
+  background: red;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 .swiper-container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-.canter{
-    width:7.5rem ;
-    height: 13.34rem;
-    background: url("../img/picd.png");
-    background-size: 100%;
-}
-.imgerBox{ width: 4.96rem;height: 0.57rem;margin: 1.5rem auto;}
-img{max-width:100%;vertical-align: middle;display:block;}
-.loveBox{width: 4.96rem;height: 4rem;margin: 0 auto;}
-.mieBox{width: 5.69rem;height: 1.1rem;margin: 1.3rem auto;}
-.canter1{
-    width:7.5rem ;
-    height: 13.34rem;
-    background: url("../img/bj2.png");
-    background-size: 100%;
-}
-.imgerBox1{ width: 5.65rem;height: 0.52rem;margin: 1.5rem auto;}
-.loveBox1{width:6.02rem;height: 5.32rem;margin: 0 auto;position: relative;}
-.loveBox2{width:0.71rem;height: 0.9rem;position: absolute;top:3.7rem;left: 2.1rem;}
-.mieBox1{width: 6.49rem;height: 1.12rem;margin: 1.3rem auto;}
-.canter2{
-    width:7.5rem ;
-    height: 13.34rem;
-    background: url("../img/bj3.png");
-    background-size: 100%;
-}
-.imgerBox2{ width: 5.25rem;height: 0.42rem;margin: 1.5rem auto;}
-.loveBox3{width:5.07rem;height: 4.99rem;margin: 0 auto;}
-.mieBox2{width: 6.49rem;height: 1.12rem;margin: 1.3rem auto;}
-.swiper-pagination-bullet-active{
-    background: rgb(255,130,135) !important;
+.swiper-pagination-bullet-active {
+  background: #ff8287;
 }
