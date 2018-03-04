@@ -1,0 +1,104 @@
+.warp{
+    width:6.4rem;
+    height:5rem;
+    /*height:100%;*/
+    margin: 0 auto;
+}
+.top{
+    width:6.4rem;
+    height:0.88rem;
+    background: #ff8288;
+    color: #fff;
+    font-size: 0.4rem;
+    text-align: center;
+    line-height: 0.88rem;
+
+    /*float: left;*/
+    /*position: absolute;*/
+}
+.box{
+    width:6.4rem;
+    height:10.38rem;
+    background: #fdefe7;
+    display:table
+}
+#form{
+    width:5.68rem;
+    height:5.3rem;
+    /*background: red;*/
+    margin: 0.42rem auto;
+}
+#form p{
+    font-size: 0.35rem;
+    color: #ff8288;
+    margin-bottom: 0.34rem;
+}
+#txt{
+    width:3.72rem;
+    height:0.74rem;
+    background:#fff;
+    border: none;
+    border-radius:0.1rem ;
+    font-size: 0.32rem;
+    /*color: #ccc;*/
+    float: left;
+    /*margin-bottom: 0.42rem;*/
+}
+#btn{
+    width:1.84rem;
+    height:0.64rem;
+    background: #ff8288;
+    border: none;
+    float: right;
+    border-radius: 0.1rem;
+    margin-top: 0.04rem;
+    color: #fff;
+    font-size: 0.32rem;
+}
+#form .verify{
+    color: #666;
+    clear: both;
+    margin-bottom: 0.32rem;
+    margin-top: 1.7rem;
+}
+#write{
+    width:5.68rem;
+    height:0.74rem;
+    background: #fff;
+    /*color: #ccc;*/
+    font-size: 0.32rem;
+    border: none;
+    border-radius: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+#btn1{
+    width:5.62rem;
+    height:0.94rem;
+    background: #ff8288;
+    color: #fff;
+    font-size: 0.38rem;
+    border: none;
+    border-radius: 0.1rem;
+    /*margin-bottom:;*/
+    margin: 0 auto  0.58rem;
+}
+#form .tishi{
+    font-size: 0.25rem;
+}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color:#ccc;
+    font-size:0.32rem;
+}
+#form .fillout{
+    clear: both;
+    font-size: 0.25rem;
+    margin-top: 0.8rem;
+     /*display: none;*/
+    position: absolute;
+}
+#form .auth{
+    width:2rem;
+    height:0.3rem;
+    font-size: 0.25rem;
+    margin-bottom: 0.2rem;
+}
