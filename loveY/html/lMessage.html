@@ -17,101 +17,119 @@
 <section class="picDiv">
     <form id="form">
         <textarea class="texts" name="message" id="texts"></textarea>
-        <input type="hidden" name="image" id="s">
-    <div class="tuku" style="display: -webkit-box"></div>
-    <div class="adds">
-        <input type="file" class="file" name="photo" id="file" multiple accept="image/png, image/jpeg, image/gif, image/jpg">
-        <div class="addBox"><img src="../img/imgs12.png" alt=""></div>
+    <div class="tuku" style="width:7.5rem;">
+        <div class="adds">
+            <input type="file" class="file" name="photo[]" id="file" multiple accept="image/png, image/jpeg, image/gif, image/jpg">
+            <div class="addBox"><img src="../img/imgs12.png" alt=""></div>
+        </div>
     </div>
     </form>
 </section>
+<div class="waing" style="display: none;">
+    <!--<img src="../img/jiaz.gif" alt="" >-->
+    <!--<div class="page">-->
+        <!--<div class="circle-loader" style="margin-top: 3rem;">-->
+            <!--<div class="circle-line">-->
+                <!--<div class="circle circle-blue"></div>-->
+                <!--<div class="circle circle-blue"></div>-->
+                <!--<div class="circle circle-blue"></div>-->
+            <!--</div>-->
+            <!--<div class="circle-line">-->
+                <!--<div class="circle circle-yellow"></div>-->
+                <!--<div class="circle circle-yellow"></div>-->
+                <!--<div class="circle circle-yellow"></div>-->
+            <!--</div>-->
+            <!--<div class="circle-line">-->
+                <!--<div class="circle circle-red"></div>-->
+                <!--<div class="circle circle-red"></div>-->
+                <!--<div class="circle circle-red"></div>-->
+            <!--</div>-->
+            <!--<div class="circle-line">-->
+                <!--<div class="circle circle-green"></div>-->
+                <!--<div class="circle circle-green"></div>-->
+                <!--<div class="circle circle-green"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div id="center" style="margin-top: 1rem;">
+        <!--<img src="img/skype.png" width="150" alt="">-->
+        <div class="skype-loader">
+            <div class="dot">
+                <div class="first"></div>
+            </div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        Logging in...
+    </div>
+</div>
 <script src="../js/app.js"></script>
-<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
 <script>
-    var userAgent = navigator.userAgent;
-    $("#file").change(function () {
-        var docObj =$(this)[0];
-        var picDiv=$(this).parents(".picDiv");
-        var fileList = docObj.files;
-        for (var i = 0; i < fileList.length; i++) {
-            var picHtml="<div class='imageDiv' > <img id='img" + fileList[i].name + "' /> <div class='cover'><i class='delbtn'>删除</i></div></div>"
-            $(".tuku").prepend(picHtml);
-            var imgObjPreview = document.getElementById("img"+fileList[i].name);
-            if (fileList && fileList[i]) {
-                imgObjPreview.style.display = 'block';
-                imgObjPreview.style.width = '1.5rem';
-                imgObjPreview.style.height = '1.5rem';
-                //imgObjPreview.src = docObj.files[0].getAsDataURL();
-                if(userAgent.indexOf('MSIE') == -1){//IE以外浏览器
-                    imgObjPreview.src = window.URL.createObjectURL(docObj.files[i]); //获取上传图片文件的物理路径
-                }else{//IE浏览器
-                    if(docObj.value.indexOf(",")!=-1){
-                        var srcArr=docObj.value.split(",");
-                        imgObjPreview.src = srcArr[i];
-                    }else{
-                        imgObjPreview.src = docObj.value;
+        var userAgent = navigator.userAgent;
+        $(document).on("change","#file",function(){
+            var docObj =$(this)[0];
+            var picDiv=$(this).parents(".picDiv");
+            var fileList = docObj.files;
+            console.log($(".tuku>div").length);
+                if($(".tuku>div").length==8){
+                    $(".adds").css("display","none");
+                }
+            for (var i = 0; i < fileList.length; i++) {
+                var picHtml="<div class='imageDiv' > <img id='img" + fileList[i].name + "' />" +
+                    " <div class='cover' ><div class='delbtn'><img src='../img/shanchu.png' alt=''></div></div></div>";
+                $(".adds").before(picHtml);
+                var imgObjPreview = document.getElementById("img"+fileList[i].name);
+                if (fileList && fileList[i]) {
+                    imgObjPreview.style.display = 'block';
+                    imgObjPreview.style.width = '1.5rem';
+                    imgObjPreview.style.height = '1.5rem';
+                    //imgObjPreview.src = docObj.files[0].getAsDataURL();
+                    if(userAgent.indexOf('MSIE') == -1){//IE以外浏览器
+                        imgObjPreview.src = window.URL.createObjectURL(docObj.files[i]); //获取上传图片文件的物理路径
+                    }else{//IE浏览器
+                        if(docObj.value.indexOf(",")!=-1){
+                            var srcArr=docObj.value.split(",");
+                            imgObjPreview.src = srcArr[i];
+                        }else{
+                            imgObjPreview.src = docObj.value;
+                        }
                     }
                 }
             }
-        }
-        // console.log($(this).get(0).files[0]);
-        var fl=$(this).get(0).files[0];
-        var imgs=document.createElement("img");
-        var obj=window.URL.createObjectURL(fl)||window.webkitURL.createObjectURL(fl);
-        imgs.src=obj;
-        //删除功能
-        $(".delbtn").hover(function () {
-            var _this=$(this);
-            _this.parents(".imageDiv").remove();
+            var fl=$(this).get(0).files[0];
+            console.log(fl);
+            var imgs=document.createElement("img");
+            var obj=window.URL.createObjectURL(fl)||window.webkitURL.createObjectURL(fl);
+            imgs.src=obj;
+            $(this).css("display","none");
+            $(this).attr("id","");
+            var html="<input type='file' class='file' name='photo[]' accept='image/png, image/jpeg, image/gif, image/jpg' id='file'>";
+            $(this).after(html);
         });
-    });
+
+        $(document).on("click",".delbtn",function(){
+                var _this=$(this);
+                $(".adds input").eq($(this).parent().parent().index()).remove();
+                _this.parents(".imageDiv").remove();
+               $(".adds").css("display","block");
+        });
     $("#fSon").on("click",function(){
-        var tes=$("form").serialize();
-        $.ajax({
-            type:"post",
-            url:"../php/index.php?c=Message&a=sendMessage",
-            dataType:"json",
-            data:tes,
-            success:function(data){
-                console.log(data);
-                if(data.code=="403"){
-                    alert(data.message);
-                }else if(data.code=="200"){
-                    alert(data.message);
-                }
-            }
-        });
         var data=new FormData($("#form")[0]);
-        console.log(data);
-        $.ajax({
-            url:"../php/server.php",
-            type:"post",
-            dataType:"json",
-            data:data,
-            processData:false,
-            contentType:false,
-            success:function (data){
-                console.log(data);
-                var i = data.photo.slice(3);
-                console.log(i);
-                $("#s").val(i);
-                var s=$("#form").serialize();
-                console.log(s);
                 $.ajax({
                     type:"post",
                     url:'../php/index.php?c=message&a=sendMessage',
                     dataType:"json",
-                    data:s,
+                    data:data,
+                    processData: false,
+                    contentType: false,
+                    beforeSend:function () {
+                        $(".waing").css("display","block");
+                    },
                     success:function(data){
                         console.log(data);
-                        if(data.code=="403"){
-                            alert(data.message);
-                        }else if(data.code=="200"){
-                            alert(data.message);
-                        }
                     }
-                });
-            }
         });
     })
 </script>
